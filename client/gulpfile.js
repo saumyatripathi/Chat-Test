@@ -16,7 +16,9 @@ gulp.task('default', ['clean'], function() {
 gulp.task('production', ['set-production', 'default']);
 
 gulp.task('development', ['default'], function() {
-    //gulp.watch('src/less/*.less', ['styles']);
+    gulp.watch('./src/less/**/*.less', ['styles']);
+    gulp.watch('./src/js/**/*.js', ['scripts']);
+    gulp.watch('./*.html', ['html']);
 })
 
 gulp.task('static', function() {
@@ -62,7 +64,7 @@ gulp.task('styles', function() {
     return gulp.src('./src/less/*.less')
         .pipe(less())
         .pipe(gulpif(env === 'production', mincss()))
-        .pipe(gulpif(env === 'production',concat('styles.css')))
+        .pipe(gulpif(env === 'production', concat('styles.css')))
         .pipe(gulp.dest('dist/css'));
 });
 

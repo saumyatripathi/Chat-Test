@@ -14,15 +14,27 @@
 </head>
 
 <body>
-    <h1>Test Chat</h1>
-    <form action=''>
-        <input class='chatInput'>
-        <button type='submit'>Send</button>
-    </form>
-    <div class='chatWindow'>
-        <ul>
-        </ul>
+    <div class='chatApp panel panel-primary'>
+        <div class='chatHeader panel-heading'>
+            <b>Test Chat</b>
+        </div>
+        <div class='chatWindow panel-body'>
+            <ul>
+            </ul>
+        </div>
+        <form action=''>
+            <div class='chatInputWindow panel-footer'>
+                <div class='chatInputControlGroup input-group'>
+                    <input class='chatInput form-control'>
+                    <span class='chatSend input-group-btn'>
+                        <button type='submit' class='chatButton btn btn-default'>Send</button>
+                    </span>
+                </div>
+            </div>
+        </form>
     </div>
+
+
     <!-- inject:js -->
     <!-- endinject -->
 </body>
