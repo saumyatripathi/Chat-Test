@@ -13,25 +13,10 @@
     <!-- endinject -->
 </head>
 
-<body>
-    <div class='chatApp panel panel-primary'>
-        <div class='chatHeader panel-heading'>
-            <b>Test Chat</b>
-        </div>
-        <div class='chatWindow panel-body'>
-            <ul>
-            </ul>
-        </div>
-        <form action=''>
-            <div class='chatInputWindow panel-footer'>
-                <div class='chatInputControlGroup input-group'>
-                    <input class='chatInput form-control'>
-                    <span class='chatSend input-group-btn'>
-                        <button type='submit' class='chatButton btn btn-default'>Send</button>
-                    </span>
-                </div>
-            </div>
-        </form>
+<body ng-app='chatApp'>
+    <div class='chatApp' ng-controller='ChatWindowController'>
+        <chat-window test='test1'>Hello</chat-window>
+        <chat-window test='test2'>Hello</chat-window>
     </div>
 
 
