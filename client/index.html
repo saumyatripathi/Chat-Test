@@ -14,9 +14,16 @@
 </head>
 
 <body ng-app='chatApp'>
-    <div class='chatApp'>
-        <chat-window ng-controller='ChatWindowController' socket-id='test1'></chat-window>
-        <chat-window ng-controller='ChatWindowController' socket-id='test2'></chat-window>
+    <div class='chatApp' ng-controller='UserListController'>
+        <div class="userList panel panel-default">
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat='user in usersOnList'>
+                        <a href="" ng-click='startChat(user)'>{{user}}</a> </li>
+                </ul>
+            </div>
+        </div>
+        <chat-window ng-controller='ChatWindowController' ng-repeat='chat in activeChats' socket-id='{{chat}}'></chat-window>
     </div>
 
 
