@@ -1,15 +1,18 @@
 <div class='chatWindow panel panel-primary'>
     <div class='chatHeader panel-heading'>
-        <b>{{testVar}}</b>
+        <b>{{socketId}}</b>
     </div>
     <div class='chatMsgWindow panel-body'>
         <ul>
+            <li ng-repeat="message in messages">
+                {{message}}
+            </li>
         </ul>
     </div>
-    <form action=''>
+    <form ng-submit='sendMessage()' novalidate>
         <div class='chatInputWindow panel-footer'>
             <div class='chatInputControlGroup input-group'>
-                <input class='chatInput form-control'>
+                <input class='chatInput form-control' ng-model='typedMessage'>
                 <span class='chatSend input-group-btn'>
                         <button type='submit' class='chatButton btn btn-default'>Send</button>
                     </span>

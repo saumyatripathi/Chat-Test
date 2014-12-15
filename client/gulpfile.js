@@ -20,7 +20,7 @@ gulp.task('production', ['set-production', 'default']);
 gulp.task('development', ['default'], function() {
     gulp.watch('./src/less/**/*.less', ['styles']);
     gulp.watch('./src/js/**/*.js', ['scripts']);
-    gulp.watch('./*.html', ['html']);
+    //gulp.watch('./*.html', ['html']);
 });
 
 gulp.task('static', function() {
@@ -36,7 +36,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('html', ['styles', 'vendor-js', 'templateCache', 'scripts'], function() {
-    return gulp.src('./*.html')
+    gulp.src('./*.html')
         .pipe(inject(gulp.src(['./dist/js/**/*.js'])
             .pipe(angularFilesort()), {
                 'ignorePath': 'dist/js',

@@ -14,9 +14,9 @@
 </head>
 
 <body ng-app='chatApp'>
-    <div class='chatApp' ng-controller='ChatWindowController'>
-        <chat-window test='test1'>Hello</chat-window>
-        <chat-window test='test2'>Hello</chat-window>
+    <div class='chatApp'>
+        <chat-window ng-controller='ChatWindowController' socket-id='test1'></chat-window>
+        <chat-window ng-controller='ChatWindowController' socket-id='test2'></chat-window>
     </div>
 
 

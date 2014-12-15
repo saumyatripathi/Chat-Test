@@ -1,1 +1,1 @@
-angular.module('chatApp', ['templatesCache', 'chatWindowDirective']);
+angular.module('chatApp', ['templatesCache', 'socketUtils', 'chatWindow']);
